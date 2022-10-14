@@ -40,8 +40,8 @@ public class Board {
 
   public TokenPlacementResult placeToken(final byte token, final int row, final int column) {
     if (token != X_TOKEN && token != O_TOKEN) return new TokenPlacementResult(ERROR,"Token must be either 0x01 or 0x02.", token);
-    if (row < 0 || row > 2) return new TokenPlacementResult(ERROR, "Row must be between zero and two, inclusively.", token);
-    if (column < 0 || column > 2) return new TokenPlacementResult(ERROR, "Column must be between zero and two, inclusively.", token);
+    if (row < 0 || row > 2) return new TokenPlacementResult(ERROR, "Row must be between 0 and 2, inclusively.", token);
+    if (column < 0 || column > 2) return new TokenPlacementResult(ERROR, "Column must be between 0 and 2, inclusively.", token);
     if (isLocationOccupied(row, column)) return new TokenPlacementResult(ERROR, "Location is already occupied.", token);
 
     final int index = getIndexForLocation(row, column);
