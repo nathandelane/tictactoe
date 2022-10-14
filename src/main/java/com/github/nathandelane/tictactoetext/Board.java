@@ -22,9 +22,9 @@ public class Board {
 
   private static final List<Integer> O_OCCUPATION_MAP = Arrays.asList(2, 8, 32, 128, 512, 2_048, 8_192, 32_768, 131_072);
 
-  private static final List<Integer> X_WINS = Arrays.asList(21, 1344, 86016, 4161, 16644, 66576, 65793, 4368);
+  private static final List<Integer> X_WINS = Arrays.asList(21, 1_344, 86_016, 4_161, 16_644, 66_576, 65_793, 4_368);
 
-  private static final List<Integer> O_WINS = Arrays.asList(42, 2688, 172032, 8322, 33288, 133152, 131586, 8736);
+  private static final List<Integer> O_WINS = Arrays.asList(42, 2_688, 172_032, 8_322, 33_288, 133_152, 131_586, 8_736);
 
   private int boardMap; // 32-bit number
 
