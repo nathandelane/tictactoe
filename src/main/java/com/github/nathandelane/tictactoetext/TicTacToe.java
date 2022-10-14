@@ -58,20 +58,7 @@ public class TicTacToe {
         }
       }
 
-      if (BOARD.isFull()) {
-        System.out.println("\nBoard is full! The game is a draw.");
-      }
-      else {
-        winner = BOARD.isWinner();
-
-        if (winner != NO_TOKEN) {
-          wins.get(winner).incrementAndGet();
-
-          final String tokenLabel = tokenLabelMap.get(winner);
-
-          System.out.format("%n%s is the winner!%n", tokenLabel);
-        }
-      }
+      winner = checkForWinner();
 
       System.out.println(BOARD);
       System.out.print("Would you like to play again (Y or N)?> ");
@@ -96,8 +83,29 @@ public class TicTacToe {
     }
   }
 
+  private byte checkForWinner() {
+    byte winner = NO_TOKEN;
+
+    if (BOARD.isFull()) {
+      System.out.println("\nBoard is full! The game is a draw.");
+    }
+    else {
+      winner = BOARD.isWinner();
+
+      if (winner != NO_TOKEN) {
+        wins.get(winner).incrementAndGet();
+
+        final String tokenLabel = tokenLabelMap.get(winner);
+
+        System.out.format("%n%s is the winner!%n", tokenLabel);
+      }
+    }
+
+    return winner;
+  }
+
   public static void main(final String[] args) {
-    System.out.println("Welcome to Tic-Tac-Toe!");
+    System.out.println("Welcome to Tic-Tac-Toe!\nWritten by Nathandelane, Software Developer");
 
     final TicTacToe ticTacToe = new TicTacToe();
     ticTacToe.run();
